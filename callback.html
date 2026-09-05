@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting to App...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        window.onload = function() {
+            // Grab the full query string (e.g., ?code=123456&state=...)
+            const queryString = window.location.search;
+            
+            // Redirect to your app's custom scheme, passing the parameters along
+            // Make sure "myhomeconnect://callback" matches the scheme in your AndroidManifest.xml
+            const appUrl = "myhomeconnect://callback" + queryString;
+            
+            // Attempt to open the app
+            window.location.href = appUrl;
+        };
+    </script>
+</head>
+<body>
+    <h2>Authentication successful!</h2>
+    <p>Returning you to the app...</p>
+    <p>If the app does not open automatically, <a id="manual-link" href="#">tap here</a>.</p>
+    
+    <script>
+        // Set the manual link just in case the auto-redirect is blocked by the browser
+        document.getElementById('manual-link').href = "myhomeconnect://callback" + window.location.search;
+    </script>
+</body>
+</html>
