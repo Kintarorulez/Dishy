@@ -1,0 +1,6 @@
+{
+  "name": "Dishy",
+  "description": "Bosch dishwasher smart control, real-time monitoring, cycle scheduling, and energy/water analytics via Home Connect.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
